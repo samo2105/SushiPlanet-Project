@@ -21,7 +21,7 @@ Rails.application.configure do
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
-  
+
   config.serve_static_files = true
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
@@ -43,6 +43,7 @@ Rails.application.configure do
       bucket: ENV.fetch('S3_BUCKET_NAME'),
       access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
       secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+      s3_host_name: "s3-#{ENV.fetch('AWS_REGION'}.amazonaws.com",
       s3_region: ENV.fetch('AWS_REGION'),
     }
   }
