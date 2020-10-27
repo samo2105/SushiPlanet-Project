@@ -49,8 +49,8 @@ Rails.application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = false
-  config.i18n.available_locales = [:'es-CL', :en, :fr]
-  config.i18n.default_locale = :'es-CL'
+  config.i18n.available_locales = [:es, :en, :fr]
+  config.i18n.default_locale = :es
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
