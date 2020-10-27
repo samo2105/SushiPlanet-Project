@@ -5,10 +5,10 @@ Spree.config do |config|
   # Core:
 
   # Default currency for new sites
-  config.currency = "USD"
+  config.currency = "CLP"
 
   # from address for transactional emails
-  config.mails_from = "store@example.com"
+  config.mails_from = "noreply@sushi-planet.com"
 
   # Use combined first and last name attribute in HTML views and API responses
   config.use_combined_first_and_last_name_in_address = true
@@ -97,11 +97,11 @@ Spree.config do |config|
 end
 
 Spree::Frontend::Config.configure do |config|
-  config.locale = 'en'
+  config.locale = 'es'
 end
 
 Spree::Backend::Config.configure do |config|
-  config.locale = 'en'
+  config.locale = 'es'
 
   # Uncomment and change the following configuration if you want to add
   # a new menu item:
