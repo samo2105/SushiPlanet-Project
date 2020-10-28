@@ -1,1 +1,10 @@
-<%# solidus_auth_devise or a custom auth system can replace this partial %>
+<% if not spree_current_user %>
+  <li class="login_link">
+    <%= link_to t('spree.login_text'), spree.login_path %>
+  </li>
+<% else %>
+  <li class="loged_user">
+    <%= link_to spree_current_user.email, spree.account_path %>
+    <%= link_to t('spree.logout_text'), spree.logout_path, method: :delete, class: 'loged_user__link' %>
+  </li>
+<% end %>

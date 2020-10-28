@@ -1,0 +1,19 @@
+#nav-bar {
+    .login_link, .loged_user {
+        float: right;
+        margin-left: 2rem;
+        font-weight: 700;
+        display: flex
+    }
+
+    .loged_user {
+        &__link {
+            color: red;
+            margin-left: 1rem;
+        }
+    }
+}
+
+#search-bar {
+    margin-top: 1rem;
+}

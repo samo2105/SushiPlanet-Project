@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_27_141971) do
+ActiveRecord::Schema.define(version: 2020_10_27_231327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -149,6 +149,16 @@ ActiveRecord::Schema.define(version: 2020_10_27_141971) do
     t.datetime "updated_at", precision: 6
     t.index ["viewable_id"], name: "index_assets_on_viewable_id"
     t.index ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type"
+  end
+
+  create_table "spree_authentication_methods", id: :serial, force: :cascade do |t|
+    t.string "environment"
+    t.string "provider"
+    t.string "api_key"
+    t.string "api_secret"
+    t.boolean "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "spree_calculators", id: :serial, force: :cascade do |t|
@@ -1095,6 +1105,14 @@ ActiveRecord::Schema.define(version: 2020_10_27_141971) do
     t.index ["address_id"], name: "index_spree_user_addresses_on_address_id"
     t.index ["user_id", "address_id"], name: "index_spree_user_addresses_on_user_id_and_address_id", unique: true
     t.index ["user_id"], name: "index_spree_user_addresses_on_user_id"
+  end
+
+  create_table "spree_user_authentications", id: :serial, force: :cascade do |t|
+    t.integer "user_id"
+    t.string "provider"
+    t.string "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "spree_user_stock_locations", id: :serial, force: :cascade do |t|
