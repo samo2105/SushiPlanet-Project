@@ -1,9 +1,8 @@
 #nav-bar {
     .login_link, .loged_user {
-        float: right;
-        margin-left: 2rem;
         font-weight: 700;
-        display: flex
+        display: flex;
+        margin-bottom: 1rem;
     }
 
     .loged_user {
@@ -16,4 +15,14 @@
 
 #search-bar {
     margin-top: 1rem;
+}
+
+@media (min-width: 480px) {
+    #nav-bar {
+        .login_link, .loged_user {
+            float: right;
+            margin-left: 2rem;
+            margin-bottom: auto;
+        }
+    }
 }
